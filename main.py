@@ -1,10 +1,11 @@
 from databasecore import *
 from uiofdata import *
+from autorisation import *
 
-x = IU_Dbp()
-x.open_database()
-x.print_10()
-print(x.setyear1)
-print('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
-print(x.setyear2)
-x.IU_window()
+user = autorisation_window()
+print(user)
+#user = 'aaa'
+if not user == 0:
+    x = IU_Dbp()
+    x.open_database()
+    x.IU_window(user)
